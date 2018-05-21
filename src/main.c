@@ -23,5 +23,6 @@ int main(int ac, char **av)
 	if (!((word = choose_random_word(av))))
 		return (84);
 	start_game_loop(word);
+	free(word);
 	return (0);
 }
