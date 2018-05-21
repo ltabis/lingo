@@ -19,11 +19,9 @@ char *choose_random_word(char **av)
 
 	if (!stream)
 		return (NULL);
-	while (getline(&line, &len, stream) != -1) {
+	for (; getline(&line, &len, stream) != -1; nbr_words++)
 		if (is_caract(line) == -1)
 			return (NULL);
-		nbr_words++;
-	}
 	free(line);
 	line = NULL;
 	fclose(stream);
