@@ -5,7 +5,7 @@
 ** display rules of the game
 */
 
-void main(void)
+void display_first_lines(void)
 {
 	printf("*: invalid letter\n");
 	printf("?: incorrectly placed letter\n");
