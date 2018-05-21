@@ -22,6 +22,7 @@ int main(int ac, char **av)
 	srand(time(NULL));
 	if (!((word = choose_random_word(av))))
 		return (84);
-	printf("word = %s\n", word);
+	if (start_game_loop(word) == -1)
+		return (84);
 	return (0);
 }

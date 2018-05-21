@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../include/proto.h"
 
 char *choose_random_word(char **av)
 {
@@ -29,4 +30,9 @@ char *choose_random_word(char **av)
 	i < nbr_words; i++);
 	fclose(stream);
 	return (line);
+}
+
+int start_game_loop(char *word)
+{
+	display_first_lines(word);
 }
