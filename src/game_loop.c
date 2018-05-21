@@ -43,10 +43,7 @@ void start_game_loop(char *word)
 
 	display_first_lines(word);
 	for (size_t rd = 0; i < word_len && rd != -1 && ret < 1; i++) {
-		if (ret != -1)
-			printf("Round %i\n>", i);
-		else
-			printf(">");
+		display_prompt(ret, i);
 		rd = getline(&line, &len, stdin);
 		ret = compare_strings(word, line);
 		i -= ret == -1 ? 1 : 0;
@@ -57,4 +54,12 @@ void start_game_loop(char *word)
 		printf("You lost!\n");
 	else
 		printf("You won!\n");
+}
+
+void display_prompt(int ret, unsigned int i)
+{
+	if (ret != -1)
+		printf("Round %i\n>", i);
+	else
+		printf(">");
 }
