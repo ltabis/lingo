@@ -19,12 +19,15 @@ char *choose_random_word(char **av)
 
 	if (!stream)
 		return (NULL);
-	while (getline(&line, &len, stream) != -1)
+	while (getline(&line, &len, stream) != -1) {
+		if (is_caract(line) == -1)
+			return (NULL);
 		nbr_words++;
+	}
 	free(line);
 	line = NULL;
 	fclose(stream);
-	if (!(stream = fopen(av[1], "r")))
+	if (!(stream = fopen(av[1], "r")) || nbr_words == 0)
 		return (NULL);
 	nbr_words = rand() % nbr_words;
 	for (unsigned int i = 0; getline(&line, &len, stream) != -1 &&

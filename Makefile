@@ -7,6 +7,7 @@
 
 SRC=	src/main.c	\
 		src/display_rules.c	\
+		src/iscaract.c	\
 		src/compare_strings.c	\
 		src/game_loop.c
 

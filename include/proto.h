@@ -15,5 +15,6 @@ void display_first_lines(char *);
 int compare_same_letters(char *, char *, char *);
 void check_letter(unsigned int, char, char *, char *);
 int compare_strings(char *, char *);
+int is_caract(const char *);
 
 #endif
