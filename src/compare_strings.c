@@ -36,7 +36,7 @@ int compare_same_letters(char *word, char *input, char *update)
 {
 	for (unsigned int i = 0; input[i]; i++) {
 		for (unsigned int j = 0; word[j]; j++) {
-			check_letter(j, input[i], word, update);
+			check_letter(i, word[j], input, update);
 		}
 	}
 	printf("%s\n", update);
@@ -45,11 +45,11 @@ int compare_same_letters(char *word, char *input, char *update)
 	return (0);
 }
 
-void check_letter(unsigned int j,
-	char input, char *word, char *update)
+void check_letter(unsigned int i, char word,
+	char *input, char *update)
 {
-	if (input == word[j]) {
-		if (update[j] == '*')
-			update[j] = '?';
+	if (input[i] == word) {
+		if (update[i] == '*')
+			update[i] = '?';
 	}
 }
