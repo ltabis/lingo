@@ -22,9 +22,11 @@ int compare_strings(char *word, char *input)
 		update[i] = '*';
 	if (lenght_word > lenght_input) {
 		fprintf(stderr, "Word too short. Retry.\n");
+		free(update);
 		return (-1);
 	} else if (lenght_word < lenght_input) {
 		fprintf(stderr, "Word too long. Retry.\n");
+		free(update);
 		return (-1);
 	}
 	for (unsigned int i = 0; update && word[i]; i++)
