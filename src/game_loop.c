@@ -33,22 +33,27 @@ char *choose_random_word(char **av)
 	return (line);
 }
 
-int start_game_loop(char *word)
+void start_game_loop(char *word)
 {
 	char *line = NULL;
 	size_t len = 0;
 	const unsigned int word_len = strlen(word);
 	unsigned int i = 1;
+	int ret = 0;
 
 	display_first_lines(word);
-	for (size_t rd = 0; i < word_len && rd != -1; i++) {
-		printf("Round %i\n>", i);
+	for (size_t rd = 0; i < word_len && rd != -1 && ret < 1; i++) {
+		if (ret != -1)
+			printf("Round %i\n>", i);
+		else
+			printf(">");
 		rd = getline(&line, &len, stdin);
-		compare_strings(word, line);
+		ret = compare_strings(word, line);
+		i -= ret == -1 ? 1 : 0;
 	}
 	if (line)
 		free(line);
-	if (word_len == i)
+	if (ret != 1)
 		printf("You lost!\n");
 	else
 		printf("You won!\n");

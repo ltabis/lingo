@@ -16,5 +16,5 @@ void display_first_lines(char *word)
 	printf("%c", word[0]);
 	for (unsigned int i = 2; i < strlen(word); i++)
 		printf("*");
-	printf("\n");
+	printf("\n\n");
 }
