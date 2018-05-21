@@ -8,6 +8,7 @@
 SRC=	src/main.c	\
 		src/word_parser.c	\
 		src/display_rules.c	\
+		src/compare_strings.c	\
 		src/game_loop.c
 
 OBJ=	$(SRC:.c=.o)

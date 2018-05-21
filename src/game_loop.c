@@ -38,14 +38,16 @@ int start_game_loop(char *word)
 	char *line = NULL;
 	size_t len = 0;
 	const unsigned int word_len = strlen(word);
-	unsigned int i = 2;
+	unsigned int i = 1;
 
 	display_first_lines(word);
-	printf("Round %i\n>", 1);
-	for (; i < word_len &&
-	getline(&line, &len, stdin) != -1 && line; i++) {
-		printf("Round %i>\n", i);
+	for (size_t rd = 0; i < word_len && rd != -1; i++) {
+		printf("Round %i\n>", i);
+		rd = getline(&line, &len, stdin);
+		compare_strings(word, line);
 	}
+	if (line)
+		free(line);
 	if (word_len == i)
 		printf("You lost!\n");
 	else
