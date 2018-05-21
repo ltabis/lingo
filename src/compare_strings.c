@@ -34,11 +34,9 @@ int compare_strings(char *word, char *input)
 
 int compare_same_letters(char *word, char *input, char *update)
 {
-	for (unsigned int i = 0; input[i]; i++) {
-		for (unsigned int j = 0; word[j]; j++) {
+	for (unsigned int i = 0; input[i]; i++)
+		for (unsigned int j = 0; word[j]; j++)
 			check_letter(i, word[j], input, update);
-		}
-	}
 	printf("%s\n", update);
 	if (strcmp(word, update) == 0)
 		return (1);
@@ -48,6 +46,9 @@ int compare_same_letters(char *word, char *input, char *update)
 void check_letter(unsigned int i, char word,
 	char *input, char *update)
 {
+	for (unsigned int j = 0; update[j]; j++)
+		if (update[j] == input[i])
+			return;
 	if (input[i] == word) {
 		if (update[i] == '*')
 			update[i] = '?';
