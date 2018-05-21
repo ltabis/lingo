@@ -9,5 +9,8 @@
 #define PROTO_H_
 
 char *choose_random_word(char **);
+int start_game_loop(char *);
+void display_first_lines(char *);
+int start_game_loop(char *);
 
 #endif
