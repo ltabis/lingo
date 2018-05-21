@@ -8,4 +8,6 @@
 #ifndef PROTO_H_
 #define PROTO_H_
 
+char *choose_random_word(char **);
+
 #endif
