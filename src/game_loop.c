@@ -43,7 +43,7 @@ void start_game_loop(char *word)
 	int ret = 0;
 
 	display_first_lines(word);
-	for (size_t rd = 0; i < word_len && rd != -1 &&
+	for (size_t rd = 1; i < word_len && rd > 0 &&
 	ret < 1 && ret != -2; i++) {
 		display_prompt(ret, i);
 		rd = getline(&line, &len, stdin);
