@@ -20,10 +20,10 @@ int compare_strings(char *word, char *input)
 	for (unsigned int i = 1; input[i]; i++)
 		update[i] = '*';
 	if (lenght_word > lenght_input) {
-		write(2, "Word too short. Retry.\n", 23);
+		fprintf(stderr, "Word too short. Retry.\n");
 		return (-1);
 	} else if (lenght_word < lenght_input) {
-		write(2, "Word too long. Retry.\n", 22);
+		fprintf(stderr, "Word too long. Retry.\n");
 		return (-1);
 	}
 	for (unsigned int i = 0; word[i]; i++)
