@@ -15,7 +15,9 @@ OBJ=	$(SRC:.c=.o)
 
 NAME=	lingo
 
-all:	$(OBJ)
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
 	gcc -o $(NAME) $(OBJ) -W -Wall -Wextra -g
 
 clean:
