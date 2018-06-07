@@ -5,18 +5,17 @@
 ** compare the string in the file with the string we write
 */
 
-#include "../include/proto.h"
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "proto.h"
 
 int compare_strings(char *word, char *input)
 {
 	int lenght_word = strlen(word);
 	int lenght_input = strlen(input);
 	char *update = strdup(word);
-	int i = 0;
 
 	for (unsigned int i = 1; update && input[i]; i++)
 		update[i] = '*';

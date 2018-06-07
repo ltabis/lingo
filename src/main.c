@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "../include/proto.h"
+#include "proto.h"
 
 int main(int ac, char **av)
 {

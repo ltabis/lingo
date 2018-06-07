@@ -13,12 +13,14 @@ SRC=	src/main.c	\
 
 OBJ=	$(SRC:.c=.o)
 
+CFLAGS=	-W -Wall -Wextra -g -Iinclude
+
 NAME=	lingo
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(OBJ) -W -Wall -Wextra -g
+	gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
 	rm -f $(NAME)

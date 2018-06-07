@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../include/proto.h"
+#include "proto.h"
 
 char *choose_random_word(char **av)
 {
